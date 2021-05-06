@@ -14,12 +14,13 @@ func MaybeFetchAndSendData(w http.ResponseWriter) error {
 			if err == nil {
 				break
 			}
-			time.Sleep(2 * time.Second)
+			time.Sleep(15 * time.Second)
 		}
 	}
+	contestant.Cookie = ""
+	contestant.SessionToken = ""
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(contestant)
-
 	return err
 }
