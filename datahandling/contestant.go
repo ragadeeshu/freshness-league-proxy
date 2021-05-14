@@ -184,7 +184,7 @@ func loadSplatnetData(contestant *Contestant) error {
 }
 
 func generateCookie(sessionToken string) (string, error) {
-	cmd := exec.Command("python3.9", "datahandling/iksm.py", sessionToken)
+	cmd := exec.Command("python3", "datahandling/iksm.py", sessionToken)
 	out, err := cmd.Output()
 	return string(out), err
 }
