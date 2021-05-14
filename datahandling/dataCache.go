@@ -14,7 +14,7 @@ func MaybeFetchAndSendData(w http.ResponseWriter) error {
 			if err == nil {
 				break
 			}
-			time.Sleep(15 * time.Second)
+			time.Sleep(60 * time.Second)
 		}
 	}
 	contestant.Cookie = ""
